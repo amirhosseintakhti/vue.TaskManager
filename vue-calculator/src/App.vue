@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1>لیست کارها</h1>
-    <ul>
       <task-list :tasks="tasks"></task-list>
-    </ul>
   </div>
 </template>
 
