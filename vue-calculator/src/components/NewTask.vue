@@ -16,7 +16,7 @@ export default {
     return {
       newTask: {
         id: new Date().toISOString(),
-        title: " ",
+        title: '',
         done: false,
       },
       errorMessage:''
@@ -24,14 +24,14 @@ export default {
   },
   methods: {
     submitForm() {
-      if (this.newTask.title!== " ") {
+      if (this.newTask.title.trim() !== ''){
         this.$emit("inp-task", this.newTask);
         this.newTask = {
-          id: " ",
-          title: " ",
+          id: '',
+          title: '',
           done: false,
         };
-        this.errorMessage=' ';
+        this.errorMessage='';
       }else{
         this.errorMessage = 'عنوان تسک نمی‌تواند خالی باشد!';
       }
