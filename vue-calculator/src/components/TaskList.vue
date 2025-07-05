@@ -1,6 +1,6 @@
 <template>
     <ul class="task-list">
-        <task-item v-for="task in tasks" :key="task.id" :task="task"></task-item>
+        <task-item v-for="task in tasks" :key="task.id" :task="task" @toggle-done="$emit('toggle-done' , $event)" ></task-item>
     </ul>
 
 </template>
@@ -8,6 +8,7 @@
 <script>
 export default{
     props:['tasks'],
+    emits:['toggle-done']
 }
 </script>
 

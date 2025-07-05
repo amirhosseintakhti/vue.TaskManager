@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>لیست کارها</h1>
-      <task-list :tasks="tasks"></task-list>
+    <task-list :tasks="tasks" @toggle-done="toggleDoneStatus"></task-list>
   </div>
 </template>
 
@@ -22,6 +22,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    toggleDoneStatus(taskId) {
+      const taskDone = this.tasks.find((task) => task.id === taskId);
+      taskDone.done = !taskDone.done;
+    },
   },
 };
 </script>
